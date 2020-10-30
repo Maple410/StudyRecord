@@ -37,7 +37,6 @@ public class DateUtil {
     public static String formatDateTime(Date date){
         return formatDateTime(date,YYYY_DD_MM_HH_MM_SS);
     }
-
     /**
      * 获取指定形式的时间格式
      * @param date
@@ -48,5 +47,14 @@ public class DateUtil {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
         String dateTime = simpleDateFormat.format(date);
         return dateTime;
+    }
+
+    public static Date formatToDate(String dateStr,String format)throws Exception{
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
+        return simpleDateFormat.parse(dateStr);
+    }
+
+    public static void main(String[] args) {
+
     }
 }
